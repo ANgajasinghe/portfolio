@@ -8,9 +8,13 @@ import TestimonialSection from "sections/testimonial-section";
 export default function Home() {
   return (
     <div>
-      <HomeSection />
+      <div className="container">
+        dfioudfoiudf ioudfioudfoi dfoiudfoi dfoiudfoiudfoudfoiudfoiudfoi
+        uoidfodfuodf
+      </div>
+      {/* <HomeSection />
       <ProjectSection />
-      <TestimonialSection />
+      <TestimonialSection /> */}
     </div>
   );
 }
