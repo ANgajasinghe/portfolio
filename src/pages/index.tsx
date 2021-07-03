@@ -6,15 +6,5 @@ import ProjectSection from "sections/project-section";
 import TestimonialSection from "sections/testimonial-section";
 
 export default function Home() {
-  return (
-    <div>
-      <div className="container">
-        dfioudfoiudf ioudfioudfoi dfoiudfoi dfoiudfoiudfoudfoiudfoiudfoi
-        uoidfodfuodf
-      </div>
-      {/* <HomeSection />
-      <ProjectSection />
-      <TestimonialSection /> */}
-    </div>
-  );
+  return <div>tiohioe oiueroiuoe oiuer ouerouer oueor oiueroiuer</div>;
 }

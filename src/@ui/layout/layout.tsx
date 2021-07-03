@@ -12,13 +12,19 @@ export default function Layout(props: any) {
         <Card className="mt-3 mb-3" style={{ height: "95vh" }}>
           <div className="row g-0 p-0 m-0">
             <MobileHeader />
+            <div className="col-sm-12">
+              <div className="d-flex">
 
-            <div className="col-md-4 col-lg-3 d-none d-md-block">
-              <PersonalDetails />
-            </div>
-            <div className="col-sm-12 col-md-7 col-lg-8">{props.children}</div>
-            <div className="d-none d-md-flex col-md-1 col-lg-1 d-flex justify-content-end">
-              <MainHeader />
+                <div className="d-none d-lg-flex">
+                  <PersonalDetails />
+                </div>
+
+                <div className="w-100 vh-100">{props.children}</div>
+
+                <div className="d-none d-lg-flex">
+                  <MainHeader />
+                </div>
+              </div>
             </div>
           </div>
         </Card>

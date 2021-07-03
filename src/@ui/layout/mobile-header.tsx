@@ -1,24 +1,30 @@
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+import Drawer from "@material-ui/core/Drawer";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+import Toolbar from "@material-ui/core/Toolbar";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import React from "react";
-import {
-  Link,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
+import React, { useState } from "react";
+import { Link } from "react-scroll";
 import { PathNames } from "../../@core/utility/header.data";
+import PersonalDetails from "./personal-details";
 
 export default function MobileHeader() {
+  const [open, setOpen] = useState(false);
+
+ // Determine whether the sentiment of text is positive
+ // Use a web service 
+ 
+
   return (
-    <header className="d-md-none">
+    <header className="d-lg-none">
       <AppBar color="default" position="sticky">
         <Toolbar className="d-flex justify-content-md-between">
-          <IconButton edge="start" color="inherit" aria-label="menu">
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            onClick={() => setOpen(!open)}
+          >
             <MoreVertIcon fontSize="small" />
           </IconButton>
 
@@ -45,6 +51,15 @@ export default function MobileHeader() {
           <div className="d-none d-md-block">Get Start</div>
         </Toolbar>
       </AppBar>
+
+      <Drawer
+        className="d-lg-none"
+        anchor={"left"}
+        open={open}
+        onClose={() => setOpen(false)}
+      >
+        <PersonalDetails />
+      </Drawer>
     </header>
   );
 }

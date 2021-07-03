@@ -14,8 +14,11 @@ import { PathNames } from "../../@core/utility/header.data";
 
 export default function MainHeader() {
   return (
-    <div className="card vh-100 w-100 shadow primary-bg-color">
-      <div className="card secondary-bg-color w-100">
+    <div
+      className="card vh-100 shadow primary-bg-color"
+      style={{ width: "80px" }}
+    >
+      <div className="card secondary-bg-color">
         <div className="text-center">This is text</div>
       </div>
     </div>
