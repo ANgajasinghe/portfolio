@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css";
+import "react-perfect-scrollbar/dist/css/styles.css";
 import "../styles/globals.css";
 import PropTypes from "prop-types";
 import type { AppProps } from "next/app";
