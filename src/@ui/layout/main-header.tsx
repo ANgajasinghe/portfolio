@@ -1,25 +1,31 @@
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+import React, { useState } from "react";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import React from "react";
-import {
-  Link,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
-import { PathNames } from "../../@core/utility/header.data";
+import MenuOpenIcon from "@material-ui/icons/MenuOpen";
+import SideMenu from "@ui/components/side-menu";
+import Drawer from "@material-ui/core/Drawer";
 
 export default function MainHeader() {
+  const [open, setOpen] = useState(false);
+
   return (
     <div
       className="card vh-100 shadow primary-bg-color"
       style={{ width: "80px" }}
     >
       <div className="card secondary-bg-color">
-        <div className="text-center">This is text</div>
+        <div className="d-flex justify-content-center ms-2 mt-3 mb-3">
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            onClick={() => setOpen(!open)}
+          >
+            <MenuOpenIcon></MenuOpenIcon>
+          </IconButton>
+        </div>
+        <Drawer anchor={"right"} open={open} onClick={() => setOpen(!open)}>
+          <SideMenu></SideMenu>
+        </Drawer>
       </div>
     </div>
   );
