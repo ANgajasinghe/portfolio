@@ -18,7 +18,7 @@ export default function PersonalDetails() {
         </div>
       </div>
 
-      <div className="overflow-scroll">
+      <div className="scroll-container">
         <div className="mt-3 ms-4 me-4 mb-5">
           <div>
             <div className="d-flex justify-content-between mb-2">

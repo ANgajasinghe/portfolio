@@ -40,4 +40,5 @@ a {
 
 .scroll-container{
   overflow-y: auto;
+  overflow-x: none;
 }
