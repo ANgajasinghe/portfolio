@@ -3,8 +3,21 @@ import { CardHeaderText } from "../components/header-text";
 import { SecondaryText, NormalText } from "../components/content-text";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import PerfectScrollbar from "react-perfect-scrollbar";
+import { useState, useEffect } from "react";
+import ProgressBar from "@ui/components/progress-bar";
+import CheckIconContent from "@ui/components/check-icon-content";
 
 export default function PersonalDetails() {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    for (let index = 0; index < 50; index++) {
+      setProgress(index);
+    }
+
+    return () => {};
+  }, []);
+
   return (
     <div className="card vh-100 shadow w-100 primary-bg-color">
       <div className="card secondary-bg-color" style={{ width: "280px" }}>
@@ -18,7 +31,7 @@ export default function PersonalDetails() {
         </div>
       </div>
 
-      <div className="scroll-container">
+      <div className="scroll-container hide-scrollbar mb-5">
         <div className="mt-3 ms-4 me-4 mb-5">
           <div>
             <div className="d-flex justify-content-between mb-2">
@@ -43,44 +56,20 @@ export default function PersonalDetails() {
 
           <CardHeaderText> Cording </CardHeaderText>
 
-          <p>
-            <div className="d-flex justify-content-between mb-2">
-              <NormalText> .NET </NormalText>
-              <NormalText> 90% </NormalText>
-            </div>
-            <LinearProgress variant="determinate" value={90} />
-          </p>
+          <ProgressBar name=".NET" value={90} />
+          <ProgressBar name="Node" value={50} />
+          <ProgressBar name="Next.js" value={50} />
+          <ProgressBar name="Angular" value={80} />
+          <ProgressBar name="React" value={80} />
 
-          <p>
-            <div className="d-flex justify-content-between mb-2">
-              <NormalText> Node </NormalText>
-              <NormalText> 50% </NormalText>
-            </div>
-            <LinearProgress variant="determinate" value={50} />
-          </p>
+          <hr className="mt-5 mb-4" />
 
-          <p>
-            <div className="d-flex justify-content-between mb-2">
-              <NormalText> Next.js </NormalText>
-              <NormalText> 50% </NormalText>
-            </div>
-            <LinearProgress variant="determinate" value={50} />
-          </p>
-          <p>
-            <div className="d-flex justify-content-between mb-2">
-              <NormalText> Angular </NormalText>
-              <NormalText> 85% </NormalText>
-            </div>
-            <LinearProgress variant="determinate" value={85} />
-          </p>
-
-          <p>
-            <div className="d-flex justify-content-between mb-2">
-              <NormalText> React </NormalText>
-              <NormalText> 85% </NormalText>
-            </div>
-            <LinearProgress variant="determinate" value={85} />
-          </p>
+          <CardHeaderText> Knowledge </CardHeaderText>
+          <CheckIconContent text=" Bootstrap, Tailwind CSS "></CheckIconContent>
+          <CheckIconContent text=" Angular Material, Material UI "></CheckIconContent>
+          <CheckIconContent text=" Azure, AWS, Heroku "></CheckIconContent>
+          <CheckIconContent text=" Azure Devops, GIT "></CheckIconContent>
+          <CheckIconContent text=" Docker "></CheckIconContent>
         </div>
       </div>
     </div>
