@@ -12,9 +12,9 @@ export const theme = createMuiTheme({
     type: "dark",
     background: { default: "#20202A", paper: "#20202A" },
     primary: {
-      light: "#191923",
+      light: "#ffd352",
       main: "#FFC107",
-      dark: "#191923",
+      dark: "#ffbf00",
     },
   },
 });

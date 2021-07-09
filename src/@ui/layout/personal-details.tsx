@@ -8,16 +8,6 @@ import ProgressBar from "@ui/components/progress-bar";
 import CheckIconContent from "@ui/components/check-icon-content";
 
 export default function PersonalDetails() {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    for (let index = 0; index < 50; index++) {
-      setProgress(index);
-    }
-
-    return () => {};
-  }, []);
-
   return (
     <div className="card vh-100 shadow w-100 primary-bg-color">
       <div className="card secondary-bg-color" style={{ width: "280px" }}>
