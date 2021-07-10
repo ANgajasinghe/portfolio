@@ -3,9 +3,10 @@ import { CardHeaderText } from "../components/header-text";
 import { SecondaryText, NormalText } from "../components/content-text";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import PerfectScrollbar from "react-perfect-scrollbar";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ProgressBar from "@ui/components/progress-bar";
 import CheckIconContent from "@ui/components/check-icon-content";
+import { Chip } from "@material-ui/core";
 
 export default function PersonalDetails() {
   return (
@@ -46,13 +47,56 @@ export default function PersonalDetails() {
 
           <CardHeaderText> Cording </CardHeaderText>
 
-          <ProgressBar name=".NET" value={90} />
-          <ProgressBar name="Node" value={50} />
-          <ProgressBar name="Next.js" value={50} />
-          <ProgressBar name="Angular" value={80} />
-          <ProgressBar name="React" value={80} />
+          <Chip
+            className="me-2"
+            color="primary"
+            variant="outlined"
+            label=".NET"
+          />
+          <Chip
+            className="me-2"
+            color="primary"
+            variant="outlined"
+            label="Javascript"
+          />
+          <Chip
+            className="me-2"
+            color="primary"
+            variant="outlined"
+            label="C#"
+          />
+          <br />
+          <Chip
+            className="me-2 mt-2"
+            color="primary"
+            variant="outlined"
+            label="Node.js"
+          />
+          <Chip
+            className="me-2 mt-2"
+            color="primary"
+            variant="outlined"
+            label="Next.js"
+          />
+          <Chip
+            className="me-2 mt-2"
+            color="primary"
+            variant="outlined"
+            label="Angular"
+          />
 
-          <hr className="mt-5 mb-4" />
+          <br />
+
+          <Chip
+            className="me-2 mt-2"
+            color="primary"
+            variant="outlined"
+            label="React"
+          />
+
+          {/* <ProgressBar name=".NET" value={90} /> */}
+
+          <hr className="mt-4 mb-4" />
 
           <CardHeaderText> Knowledge </CardHeaderText>
           <CheckIconContent text=" Bootstrap, Tailwind CSS "></CheckIconContent>
