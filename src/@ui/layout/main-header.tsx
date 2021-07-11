@@ -8,26 +8,33 @@ export default function MainHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div
-      className="card vh-100 shadow primary-bg-color"
-      style={{ width: "80px" }}
-    >
-      <div className="card secondary-bg-color">
-        <div className="d-flex justify-content-center ms-2 mt-3 mb-3">
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            onClick={() => setOpen(!open)}
-          >
-            <MenuOpenIcon></MenuOpenIcon>
-          </IconButton>
+    <>
+      <div
+        className="card vh-100 shadow primary-bg-color"
+        style={{ width: "80px" }}
+      >
+        <div className="card secondary-bg-color">
+          <div className="d-flex justify-content-center ms-2 mt-3 mb-3">
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              onClick={() => setOpen(!open)}
+            >
+              <MenuOpenIcon></MenuOpenIcon>
+            </IconButton>
+          </div>
         </div>
-        <Drawer anchor={"right"} open={open} onClick={() => setOpen(!open)}>
-          <SideMenu></SideMenu>
-        </Drawer>
       </div>
-    </div>
+
+      <Drawer
+        anchor={"right"}
+        open={open}
+        onClick={() => setOpen(!open)}
+      >
+        <SideMenu></SideMenu>
+      </Drawer>
+    </>
   );
 }
 

@@ -45,22 +45,22 @@ export default function PersonalDetails() {
 
           <hr />
 
-          <CardHeaderText> Cording </CardHeaderText>
+          <CardHeaderText> Coding </CardHeaderText>
 
           <Chip
-            className="me-2"
+            className="me-2 mt-2"
             color="primary"
             variant="outlined"
             label=".NET"
           />
           <Chip
-            className="me-2"
+            className="me-2 mt-2"
             color="primary"
             variant="outlined"
             label="Javascript"
           />
           <Chip
-            className="me-2"
+            className="me-2 mt-2"
             color="primary"
             variant="outlined"
             label="C#"
@@ -78,11 +78,12 @@ export default function PersonalDetails() {
             variant="outlined"
             label="Next.js"
           />
+
           <Chip
             className="me-2 mt-2"
             color="primary"
             variant="outlined"
-            label="Angular"
+            label="React"
           />
 
           <br />
@@ -91,7 +92,7 @@ export default function PersonalDetails() {
             className="me-2 mt-2"
             color="primary"
             variant="outlined"
-            label="React"
+            label="Angular"
           />
 
           {/* <ProgressBar name=".NET" value={90} /> */}

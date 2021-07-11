@@ -10,9 +10,13 @@ import Typist from "react-text-typist";
 import { Button } from "@material-ui/core";
 import CountUp from "react-countup";
 import classes from "../styles/Home.module.css";
-import { NormalText } from "@ui/components/content-text";
+import { NormalText, SecondaryText } from "@ui/components/content-text";
+import { CardHeaderText } from "@ui/components/header-text";
+import MyServiceCard from "@ui/components/my-service-card";
+import { createClient } from "@supabase/supabase-js";
+import { MyServiceModel } from "@core/model/my-services.model";
 
-export default function Home() {
+export default function Home(props: { services: MyServiceModel[] }) {
   const backgroundImage = {
     backgroundImage: "url('./assets/img/background-img-02.jpg')",
     width: "100%",
@@ -108,8 +112,37 @@ export default function Home() {
               </span>
             </div>
           </div>
+
+          <section className="mt-3">
+            <CardHeaderText>My Services</CardHeaderText>
+
+            <div className="row pt-2">
+              {props?.services.map((service) => (
+                <div className="col-sm-4" key={service.id}>
+                  <MyServiceCard
+                    title={service.title}
+                    description={service.description}
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps(context: any) {
+  const supabaseUrl = "https://euuxswablrvfihzxbfml.supabase.co";
+  const supabaseKey = process.env.SUPABASE_KEY ?? "";
+  const supabase = createClient(supabaseUrl, supabaseKey);
+
+  const response = await supabase.from("my_services").select("*");
+
+  return {
+    props: {
+      services: response.data,
+    },
+  };
 }

@@ -14,12 +14,13 @@ export default function Layout(props: any) {
             <MobileHeader />
             <div className="col-sm-12">
               <div className="d-flex">
-
                 <div className="d-none d-lg-flex">
                   <PersonalDetails />
                 </div>
 
-                <div className="w-100 vh-100">{props.children}</div>
+                <div className="w-100 vh-100 scroll-container hide-scrollbar">
+                  {props.children}
+                </div>
 
                 <div className="d-none d-lg-flex">
                   <MainHeader />

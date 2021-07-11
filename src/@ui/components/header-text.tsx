@@ -6,19 +6,15 @@ import {
 } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    cardHeader: {
-      fontFamily: "Montserrat, sans-serif",
-    },
+    cardHeader: {},
   })
 );
 
 export function CardHeaderText(props: any) {
   const classes = useStyles();
   return (
-    <p className="mt-2">
-      <small className={classes.cardHeader} style={{ fontWeight: "bold" }}>
-        {props.children}
-      </small>
-    </p>
+    <div className="mt-2">
+      <h6 className={classes.cardHeader}>{props.children}</h6>
+    </div>
   );
 }
