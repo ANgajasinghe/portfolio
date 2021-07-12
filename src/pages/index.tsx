@@ -1,13 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import HomeSection from "../sections/home-section";
-import ProjectSection from "sections/project-section";
-import TestimonialSection from "sections/testimonial-section";
-import backgroundImage from "../../public/assets/img/background-img-01.jpeg";
 import React from "react";
 import Typist from "react-text-typist";
-import { Button } from "@material-ui/core";
+import { Avatar, Button } from "@material-ui/core";
 import CountUp from "react-countup";
 import classes from "../styles/Home.module.css";
 import { NormalText, SecondaryText } from "@ui/components/content-text";
@@ -15,6 +10,7 @@ import { CardHeaderText } from "@ui/components/header-text";
 import MyServiceCard from "@ui/components/my-service-card";
 import { createClient } from "@supabase/supabase-js";
 import { MyServiceModel } from "@core/model/my-services.model";
+import BootstrapImg from "../../public/assets/img/bootstrap-no-background.png";
 
 export default function Home(props: { services: MyServiceModel[] }) {
   const backgroundImage = {
@@ -60,6 +56,16 @@ export default function Home(props: { services: MyServiceModel[] }) {
           >
             <small>EXPLORE NOW</small>
           </Button>
+
+          <br />
+          <Image
+            src="/assets/img/bootstrap-no-background.png"
+            width={30}
+            height={30}
+            alt="bs Logo"
+          ></Image>
+
+          <div className="row"></div>
         </div>
       </div>
 

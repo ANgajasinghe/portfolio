@@ -6,12 +6,15 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 import React, { useState, useEffect } from "react";
 import ProgressBar from "@ui/components/progress-bar";
 import CheckIconContent from "@ui/components/check-icon-content";
-import { Chip } from "@material-ui/core";
+import { Avatar, Chip } from "@material-ui/core";
 
 export default function PersonalDetails() {
   return (
-    <div className="card vh-100 shadow w-100 primary-bg-color">
-      <div className="card secondary-bg-color" style={{ width: "280px" }}>
+    <div
+      className="card vh-100 shadow w-100 primary-bg-color"
+      style={{ maxWidth: "400px" }}
+    >
+      <div className="card secondary-bg-color">
         <div className="text-center mt-4 mb-4">
           <ProfileImage />
           <CardHeaderText> AG. Nayanajith </CardHeaderText>
@@ -48,31 +51,37 @@ export default function PersonalDetails() {
           <CardHeaderText> Coding </CardHeaderText>
 
           <Chip
+            avatar={<Avatar alt=".net" src="/assets/img/net-logo.png" />}
             className="me-2 mt-2"
             color="primary"
             variant="outlined"
             label=".NET"
           />
           <Chip
+            avatar={<Avatar alt=".net" src="/assets/img/javascript.png" />}
             className="me-2 mt-2"
             color="primary"
             variant="outlined"
             label="Javascript"
           />
+
           <Chip
+            avatar={<Avatar alt=".net" src="/assets/img/csharp.png" />}
             className="me-2 mt-2"
             color="primary"
             variant="outlined"
             label="C#"
           />
-          <br />
+
           <Chip
+            avatar={<Avatar alt=".net" src="/assets/img/nodejs.png" />}
             className="me-2 mt-2"
             color="primary"
             variant="outlined"
             label="Node.js"
           />
           <Chip
+            avatar={<Avatar alt=".net" src="/assets/img/nextjs.png" />}
             className="me-2 mt-2"
             color="primary"
             variant="outlined"
@@ -80,6 +89,7 @@ export default function PersonalDetails() {
           />
 
           <Chip
+            avatar={<Avatar alt=".net" src="/assets/img/reactjs.png" />}
             className="me-2 mt-2"
             color="primary"
             variant="outlined"
@@ -89,6 +99,7 @@ export default function PersonalDetails() {
           <br />
 
           <Chip
+            avatar={<Avatar alt=".net" src="/assets/img/angular.jpg" />}
             className="me-2 mt-2"
             color="primary"
             variant="outlined"

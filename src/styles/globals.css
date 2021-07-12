@@ -63,6 +63,10 @@ a {
   overflow-x: none;
 }
 
+.icon-img {
+  max-width: 50px !important;
+}
+
 /* .btn-custom {
   width: 180px;
   height: 60px;
