@@ -8,7 +8,7 @@ export default function Layout(props: any) {
   return (
     <>
       {/* <MainHeader /> */}
-      <main className="container-fluid">
+      <main className="container-fluid container-xxl">
         <Card className="mt-3 mb-3" style={{ height: "95vh" }}>
           <div className="row g-0 p-0 m-0">
             <MobileHeader />
@@ -18,7 +18,7 @@ export default function Layout(props: any) {
                   <PersonalDetails />
                 </div>
 
-                <div className="w-100 vh-100 scroll-container hide-scrollbar">
+                <div className="w-100 pb-5 vh-100 scroll-container hide-scrollbar">
                   {props.children}
                 </div>
 

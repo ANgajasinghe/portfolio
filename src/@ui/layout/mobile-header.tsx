@@ -45,7 +45,9 @@ export default function MobileHeader() {
         open={open}
         onClose={() => setOpen(false)}
       >
-        <PersonalDetails />
+        <div style={{ width: "250px" }}>
+          <PersonalDetails />
+        </div>
       </Drawer>
 
       <Drawer
@@ -53,7 +55,16 @@ export default function MobileHeader() {
         open={sideMenuOpen}
         onClick={() => setSideMenuOpen(!sideMenuOpen)}
       >
-        <SideMenu></SideMenu>
+        <div
+          className="card vh-100 shadow primary-bg-color"
+          style={{ width: "80px" }}
+        >
+          <div className="card secondary-bg-color mt-4">
+            <div className="card-body">
+              <SideMenu></SideMenu>
+            </div>
+          </div>
+        </div>
       </Drawer>
     </header>
   );

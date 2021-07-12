@@ -11,6 +11,7 @@ import MyServiceCard from "@ui/components/my-service-card";
 import { createClient } from "@supabase/supabase-js";
 import { MyServiceModel } from "@core/model/my-services.model";
 import BootstrapImg from "../../public/assets/img/bootstrap-no-background.png";
+import KnowledgeIcon from "@ui/components/knowledge-icon";
 
 export default function Home(props: { services: MyServiceModel[] }) {
   const backgroundImage = {
@@ -59,14 +60,7 @@ export default function Home(props: { services: MyServiceModel[] }) {
 
           <br />
 
-          <div className="mt-2">
-            <Image
-              src="/assets/img/bootstrap-no-background.png"
-              width={30}
-              height={30}
-              alt="bs Logo"
-            ></Image>
-          </div>
+          <KnowledgeIcon></KnowledgeIcon>
         </div>
       </div>
 
