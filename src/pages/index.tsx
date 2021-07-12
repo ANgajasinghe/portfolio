@@ -58,14 +58,15 @@ export default function Home(props: { services: MyServiceModel[] }) {
           </Button>
 
           <br />
-          <Image
-            src="/assets/img/bootstrap-no-background.png"
-            width={30}
-            height={30}
-            alt="bs Logo"
-          ></Image>
 
-          <div className="row"></div>
+          <div className="mt-2">
+            <Image
+              src="/assets/img/bootstrap-no-background.png"
+              width={30}
+              height={30}
+              alt="bs Logo"
+            ></Image>
+          </div>
         </div>
       </div>
 
