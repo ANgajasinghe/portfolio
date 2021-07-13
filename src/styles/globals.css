@@ -12,6 +12,10 @@ body {
   color: #ffc107;
 }
 
+a:hover {
+  color: #ffc107 !important;
+}
+
 .primary-bg-color {
   background-color: #20202a;
 }

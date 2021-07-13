@@ -8,18 +8,20 @@ export default function MainHeader() {
   const [open, setOpen] = useState(false);
 
   return (
+    <div
+      className="card vh-100 shadow primary-bg-color"
+      style={{ width: "80px" }}
+    >
+      <div className="card secondary-bg-color">
+        <div className="d-flex justify-content-center ms-2 mt-3 mb-3">
+          <h4> AG. </h4>
+        </div>
 
-      <div
-        className="card vh-100 shadow primary-bg-color"
-        style={{ width: "80px" }}
-      >
-        <div className="card secondary-bg-color mt-4">
-          <div className="card-body">
-            <SideMenu></SideMenu>
-          </div>
+        <div className="card-body">
+          <SideMenu></SideMenu>
         </div>
       </div>
-
+    </div>
   );
 }
 

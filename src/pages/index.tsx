@@ -12,6 +12,7 @@ import { createClient } from "@supabase/supabase-js";
 import { MyServiceModel } from "@core/model/my-services.model";
 import BootstrapImg from "../../public/assets/img/bootstrap-no-background.png";
 import KnowledgeIcon from "@ui/components/knowledge-icon";
+import HomeCountUp from "@ui/components/home-count-up";
 
 export default function Home(props: { services: MyServiceModel[] }) {
   const backgroundImage = {
@@ -66,53 +67,7 @@ export default function Home(props: { services: MyServiceModel[] }) {
 
       <div className="mt-3 ms-1">
         <div className="row">
-          <div className="col-sm-3">
-            <div className="d-flex justify-content-center align-items-center">
-              <CountUp className={classes.counterText} end={3} />
-              <span className={[classes.counterText, "ms-2 me-4"].join(" ")}>
-                <b>+</b>
-              </span>
-              <span>
-                <NormalText> Years Experience </NormalText>
-              </span>
-            </div>
-          </div>
-
-          <div className="col-sm-3">
-            <div className="d-flex justify-content-center align-items-center">
-              <CountUp className={classes.counterText} end={50} />
-              <span className={[classes.counterText, "ms-2 me-4"].join(" ")}>
-                <b>+</b>
-              </span>
-              <span>
-                <NormalText> Completed Projects </NormalText>
-              </span>
-            </div>
-          </div>
-
-          <div className="col-sm-3">
-            <div className="d-flex justify-content-center align-items-center">
-              <CountUp className={classes.counterText} end={30} />
-              <span className={[classes.counterText, "ms-2 me-4"].join(" ")}>
-                <b>+</b>
-              </span>
-              <span>
-                <NormalText> Happy Customers </NormalText>
-              </span>
-            </div>
-          </div>
-
-          <div className="col-sm-3">
-            <div className="d-flex justify-content-center align-items-center">
-              <CountUp className={classes.counterText} end={5} />
-              <span className={[classes.counterText, "ms-2 me-4"].join(" ")}>
-                <b>+</b>
-              </span>
-              <span>
-                <NormalText> Honors and Awards </NormalText>
-              </span>
-            </div>
-          </div>
+          <HomeCountUp></HomeCountUp>
 
           <section className="mt-3">
             <CardHeaderText>My Services</CardHeaderText>
