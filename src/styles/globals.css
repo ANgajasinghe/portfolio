@@ -47,6 +47,7 @@ a {
 .background-img {
   background-repeat: no-repeat;
   background-size: cover;
+  height: 350px;
 }
 
 ::-webkit-scrollbar {

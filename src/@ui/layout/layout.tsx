@@ -1,10 +1,29 @@
 import { Card } from "@material-ui/core";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MainHeader from "./main-header";
 import MobileHeader from "./mobile-header";
 import PersonalDetails from "./personal-details";
+import { Animate } from "react-simple-animate";
+import Router from "next/router";
 
 export default function Layout(props: any) {
+  const [isAnimate, setIsAnimate] = useState(false);
+  const [displayChildren, setDisplayChildren] = useState(props.children);
+
+  // useEffect(() => {
+  //   setIsAnimate(true);
+  // }, []);
+
+  // useEffect(() => {
+  //   if (props.children !== displayChildren) {
+  //     //  setIsAnimate(false);
+  //     console.log("New Children");
+  //   }
+  //   setDisplayChildren(props.children);
+  //   // setIsAnimate(true);
+  //   console.log("Called");
+  // }, [props.children, setDisplayChildren, displayChildren]);
+
   return (
     <>
       {/* <MainHeader /> */}

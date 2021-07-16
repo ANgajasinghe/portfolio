@@ -5,8 +5,6 @@ export default function MyServiceCard(props: {
   title: string;
   description: string;
 }) {
-  console.log(props);
-
   return (
     <div className="card mt-2 secondary-bg-color">
       <div className="card-body">

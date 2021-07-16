@@ -1,16 +1,10 @@
-import Head from "next/head";
-import Image from "next/image";
 import React from "react";
 import Typist from "react-text-typist";
-import { Avatar, Button } from "@material-ui/core";
-import CountUp from "react-countup";
-import classes from "../styles/Home.module.css";
-import { NormalText, SecondaryText } from "@ui/components/content-text";
+import { Button } from "@material-ui/core";
 import { CardHeaderText } from "@ui/components/header-text";
 import MyServiceCard from "@ui/components/my-service-card";
 import { createClient } from "@supabase/supabase-js";
 import { MyServiceModel } from "@core/model/my-services.model";
-import BootstrapImg from "../../public/assets/img/bootstrap-no-background.png";
 import KnowledgeIcon from "@ui/components/knowledge-icon";
 import HomeCountUp from "@ui/components/home-count-up";
 
