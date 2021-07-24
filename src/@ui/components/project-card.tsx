@@ -4,15 +4,16 @@ import FsLightbox from "fslightbox-react";
 import { Button } from "@material-ui/core";
 import { SecondaryText } from "./content-text";
 import Image from "next/image";
+import { MyProject } from "@core/model/my-project.model";
 
-export default function ProjectCard(props: any) {
+export default function ProjectCard(props: { project: MyProject }) {
   const [toggler, setToggler] = useState(false);
   return (
     <div className="col-sm-6 mb-2">
       <div className="card secondary-bg-color">
         <div className="card-body mb-4">
           <div className="text-center">
-            <CardHeaderText> Viral Pool - Admin Portal </CardHeaderText>
+            <CardHeaderText> {props.project.title} </CardHeaderText>
           </div>
         </div>
 
@@ -29,22 +30,19 @@ export default function ProjectCard(props: any) {
                 <small>EXPLORE NOW</small>
               </Button>
               <p className="d-flex">
-                <ProjectCardTechImage></ProjectCardTechImage>
+                {props.project.technology?.map((item, index) => (
+                  <ProjectCardTechImage
+                    key={index}
+                    icon={item}
+                  ></ProjectCardTechImage>
+                ))}
               </p>
             </div>
           </div>
           <div className="col-7">
-            {/* <div
-              className="background-img"
-              style={{
-                backgroundImage:
-                  "url(https://euuxswablrvfihzxbfml.supabase.co/storage/v1/object/public/images/viralpool-admin-portal.png)",
-              }}
-            ></div> */}
-
             <Image
-              src="https://euuxswablrvfihzxbfml.supabase.co/storage/v1/object/public/images/viralpool-admin-portal.png"
-              alt="Picture of the viralpool"
+              src={props.project.imageUrl}
+              alt={props.project.title}
               className="background-img"
               blurDataURL={base64Image}
               placeholder="blur"
@@ -55,75 +53,20 @@ export default function ProjectCard(props: any) {
         </div>
 
         <div className="card-body">
-          <SecondaryText>
-            Viralpool is a marketplace for social media influencers to monetize
-            their social media platforms providing marketing services to
-            corporate and retail clients. This platform was developed for the
-            largest influencer marketing agency in Sri lanka, with web platforms
-            for admin services, clients and the influencers and a mobile
-            platform for the influencers.
-          </SecondaryText>
+          <SecondaryText>{props.project.description}</SecondaryText>
         </div>
 
-        <FsLightbox
-          toggler={toggler}
-          sources={[
-            "https://i.imgur.com/fsyrScY.jpg",
-            "https://www.youtube.com/watch?v=xshEZzpS4CQ",
-            "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-          ]}
-        />
-
-        {/* <div>
-              <img src="https://euuxswablrvfihzxbfml.supabase.co/storage/v1/object/public/images/viralpool_admin.PNG" />
-            </div>
-            <div>
-              <img src="https://euuxswablrvfihzxbfml.supabase.co/storage/v1/object/public/images/viralpool_admin.PNG" />
-            </div>
-            <div>
-              <img src="https://euuxswablrvfihzxbfml.supabase.co/storage/v1/object/public/images/viralpool_admin.PNG" />
-            </div> */}
+        <FsLightbox toggler={toggler} sources={props.project.gallery} />
       </div>
     </div>
   );
 }
 
-export function ProjectCardTechImage() {
+export function ProjectCardTechImage(props: { icon: string }) {
   return (
-    <>
-      <div className="mt-2 me-2">
-        <Image
-          src="/assets/img/azure.png"
-          width={15}
-          height={15}
-          alt="bs Logo"
-        ></Image>
-      </div>
-      <div className="mt-2 me-2">
-        <Image
-          src="/assets/img/Angular_full_color_logo.svg.png"
-          width={15}
-          height={15}
-          alt="bs Logo"
-        ></Image>
-      </div>
-      <div className="mt-2 me-2">
-        <Image
-          src="/assets/img/net-logo.png"
-          width={15}
-          height={15}
-          alt="bs Logo"
-        ></Image>
-      </div>
-      <div className="mt-2 me-2">
-        <Image
-          src="/assets/img/heroku.png"
-          width={15}
-          height={15}
-          alt="bs Logo"
-        ></Image>
-      </div>
-    </>
+    <div className="mt-2 me-2">
+      <Image src={props.icon} width={15} height={15} alt="bs Logo"></Image>
+    </div>
   );
 }
 
