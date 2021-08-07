@@ -15,9 +15,7 @@ export default function SideMenu() {
       <Link href="/" passHref={true}>
         <Tooltip title="HOME" aria-label="home">
           <IconButton>
-            <HomeIcon
-              className={router.pathname == "/" ? "yellow" : ""}
-            ></HomeIcon>
+              <i className={router.pathname == "/" ? "yellow las la-user" : "las la-user"}></i>
           </IconButton>
         </Tooltip>
       </Link>
@@ -26,7 +24,7 @@ export default function SideMenu() {
       <Link href="/project" passHref={true}>
         <Tooltip title="PROJECTS" aria-label="projects">
           <IconButton>
-            <AccountTreeIcon></AccountTreeIcon>
+           <i className={router.pathname == "/" ? "yellow las la-briefcase" : "las la-briefcase"}></i>
           </IconButton>
         </Tooltip>
       </Link>

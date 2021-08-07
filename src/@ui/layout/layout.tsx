@@ -34,7 +34,7 @@ export default function Layout(props: any) {
             <div className="col-sm-12">
               <div className="d-flex">
                 <div className="d-none d-lg-flex">
-                  <PersonalDetails />
+                <MainHeader />
                 </div>
 
                 <div className="w-100 pb-5 vh-100 scroll-container hide-scrollbar">
@@ -42,7 +42,8 @@ export default function Layout(props: any) {
                 </div>
 
                 <div className="d-none d-lg-flex">
-                  <MainHeader />
+           
+                                  <PersonalDetails />
                 </div>
               </div>
             </div>

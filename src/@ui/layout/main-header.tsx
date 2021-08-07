@@ -9,14 +9,18 @@ export default function MainHeader() {
 
   return (
     <div
-      className="card vh-100 shadow primary-bg-color"
-      style={{ width: "80px" }}
+      className="card vh-100 border-0 d-flex justify-content-center body-bg"
+      style={{ width: "80px"  }}
     >
-      <div className="card secondary-bg-color">
-        <div className="d-flex justify-content-center ms-2 mt-3 mb-3">
-          <h4> AG. </h4>
+       <div className="position-absolute p-1  w-100 top-0 text-center mb-3">
+         <div className="d-flex nav-item-box justify-content-center">
+            <h4 className="yellow"> AG. </h4>
+         </div>
+          
         </div>
 
+      <div className="card border-0 body-bg">
+       
         <div className="card-body">
           <SideMenu></SideMenu>
         </div>
