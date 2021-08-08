@@ -1,100 +1,77 @@
 import React from "react";
-import Typist from "react-text-typist";
-import { Button } from "@material-ui/core";
-import { CardHeaderText } from "@ui/components/header-text";
+import {PageSecondaryHeader} from "@ui/components/header-text";
 import MyServiceCard from "@ui/components/my-service-card";
-import { createClient } from "@supabase/supabase-js";
-import { MyServiceModel } from "@core/model/my-services.model";
-import KnowledgeIcon from "@ui/components/knowledge-icon";
+import LandingAnimation from "@ui/components/landing-animation";
+import {createClient} from "@supabase/supabase-js";
+import {MyServiceModel} from "@core/model/my-services.model";
+
 import HomeCountUp from "@ui/components/home-count-up";
+import {SecondaryText} from "@ui/components/text";
 
 export default function Home(props: { services: MyServiceModel[] }) {
-  const backgroundImage = {
-    backgroundImage: "url('./assets/img/background-img-02.jpg')",
-    width: "100%",
-    height: "300px",
-  };
+    const backgroundImage = {
+        backgroundImage: "url('./assets/img/background-img-02.jpg')",
+        width: "100%",
+        height: "300px",
+    };
 
-  return (
-    <div className="m-4">
-      <div className="card secondary-bg-color">
-        <div className="card-body m-5">
-          <div></div>
-          <h1>
-            <b>
-              Discover my Amazing <br /> Art Space!
-            </b>
-          </h1>
+    return (
+        <LandingAnimation title={'My Details'} description={'test'}>
 
-          <div
-            className="mt-3 d-flex"
-            style={{ fontFamily: "Roboto Mono, monospace", fontSize: "14px" }}
-          >
-            &lt;<span className="yellow">code</span>&gt;&nbsp;
-            <Typist
-              sentences={[
-                "I build web systems",
-                "I do process automation tasks",
-                "I do IT consulting",
-                "I build cross-platform applications",
-              ]}
-              deletingSpeed={80}
-              loop={true}
-            />
-            &nbsp;&lt;/<span className="yellow">code</span>&gt;
-          </div>
+            <h1>
+                <b>
+                    About me
+                </b>
+            </h1>
 
-          <Button
-            variant="contained"
-            size="large"
-            className="mt-4"
-            color="primary"
-          >
-            <small>EXPLORE NOW</small>
-          </Button>
+            <SecondaryText>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+                quasi! Veniam quaerat tenetur pariatur doloribus.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+                quasi! Veniam quaerat tenetur pariatur doloribus.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+                quasi! Veniam quaerat tenetur pariatur doloribus.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+                quasi! Veniam quaerat tenetur pariatur doloribus.
+            </SecondaryText>
 
-          <br />
 
-          <KnowledgeIcon></KnowledgeIcon>
-        </div>
-      </div>
+            <div className="mt-3 ms-1">
+                <div className="row">
+                    <HomeCountUp/>
 
-      <div className="mt-3 ms-1">
-        <div className="row">
-          <HomeCountUp></HomeCountUp>
+                    <section className="mt-3">
+                        <PageSecondaryHeader>My Services</PageSecondaryHeader>
 
-          <section className="mt-3">
-            <CardHeaderText>My Services</CardHeaderText>
-
-            <div className="row pt-2">
-              {props?.services.map((service) => (
-                <div className="col-sm-4" key={service.id}>
-                  <MyServiceCard
-                    title={service.title}
-                    description={service.description}
-                  />
+                        <div className="row pt-2">
+                            {props?.services.map((service) => (
+                                <div className="col-sm-4" key={service.id}>
+                                    <MyServiceCard
+                                        title={service.title}
+                                        description={service.description}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </section>
                 </div>
-              ))}
             </div>
-          </section>
-        </div>
-      </div>
-    </div>
-  );
+        </LandingAnimation>
+    );
 }
 
 export async function getServerSideProps(context: any) {
-  const supabaseUrl = "https://euuxswablrvfihzxbfml.supabase.co";
-  const supabaseKey = process.env.SUPABASE_KEY ?? "";
-  const supabase = createClient(supabaseUrl, supabaseKey);
+    const supabaseUrl = "https://euuxswablrvfihzxbfml.supabase.co";
+    const supabaseKey = process.env.SUPABASE_KEY ?? "";
+    const supabase = createClient(supabaseUrl, supabaseKey);
 
-  const response = await supabase.from("my_services").select("*");
+    const response = await supabase.from("my_services").select("*");
 
-  return {
-    props: {
-      services: response.data,
-    },
-  };
+    return {
+        props: {
+            services: response.data,
+        },
+    };
 }
 
 

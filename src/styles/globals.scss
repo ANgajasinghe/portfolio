@@ -1,0 +1,82 @@
+@import "partials/text";
+@import "partials/bg";
+
+html,
+body {
+  scroll-behavior: smooth;
+  background-color: #191923;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+a:hover {
+  color: #ffc107 !important;
+}
+
+
+.nav-item-box {
+  background-color: #20202a;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  margin: 4px;
+  border-radius: 10px;
+}
+
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.background-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  overflow-y: scroll;
+  background: #24242f;
+  box-shadow: inset 0 0 4px #24242f;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #434343;
+  border-radius: 15px;
+}
+
+.scroll-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.icon-img {
+  max-width: 50px !important;
+}
+
+.secondary-text {
+  font-size: 14px;
+  color: #79797C;
+  font-family: 'Open Sans', sans-serif;
+}

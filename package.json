@@ -13,10 +13,12 @@
     "@material-ui/icons": "^4.11.2",
     "@supabase/supabase-js": "^1.18.1",
     "bootstrap": "^5.0.2",
+    "framer-motion": "^4.1.17",
     "fslightbox-react": "^1.6.2",
     "next": "11.0.1",
     "next-compose-plugins": "^2.2.1",
     "next-optimized-images": "^2.6.2",
+    "next-seo": "^4.26.0",
     "nprogress": "^0.2.0",
     "react": "17.0.2",
     "react-countup": "^4.4.0",
@@ -25,7 +27,8 @@
     "react-perfect-scrollbar": "^1.5.8",
     "react-scroll": "^1.8.2",
     "react-simple-animate": "^3.3.12",
-    "react-text-typist": "^1.0.6"
+    "react-text-typist": "^1.0.6",
+    "sass": "^1.37.0"
   },
   "devDependencies": {
     "@types/fslightbox-react": "^1.4.1",
