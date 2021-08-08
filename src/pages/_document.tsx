@@ -31,7 +31,6 @@ export default class MyDocument extends Document {
                         rel="stylesheet"
                     />
                     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"/>
-                    <title> AG. Nayanajith </title>
                 </Head>
                 <body>
                 <div id="overlays"/>
