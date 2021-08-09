@@ -3,7 +3,7 @@ import {CardHeaderText} from "./header-text";
 import FsLightbox from "fslightbox-react";
 import {Button} from "@material-ui/core";
 import {SecondaryText} from "./text";
-import Image from "next/image";
+    import Image from "next/image";
 import {MyProject} from "@core/model/my-project.model";
 
 export default function ProjectCard(props: { project: MyProject }) {
