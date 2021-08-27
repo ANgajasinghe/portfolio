@@ -18,7 +18,7 @@ export function CardHeaderText(props: any) {
 export function PageSecondaryHeader(props: any) {
     return (
         <div className="mt-2">
-            <h4 style={{fontWeight: 600}}>{props.children}</h4>
+            <h4 style={{fontWeight: 100}}>{props.children}</h4>
         </div>
     );
 }

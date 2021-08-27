@@ -1,9 +1,11 @@
 import Image from "next/image";
 import {Avatar, Chip} from "@material-ui/core";
 import React from "react";
+
 export function SkillItem() {
     return (
         <div>
+            {/*js*/}
             <Chip
                 avatar={<Avatar alt=".net" src="/assets/img/javascript.png"/>}
                 className="me-2 mt-2"
@@ -35,6 +37,8 @@ export function SkillItem() {
                 label="Node.js"
             />
             <br/>
+            
+            {/*.net*/}
             <Chip
                 avatar={<Avatar alt=".net" src="/assets/img/csharp.png"/>}
                 className="me-2 mt-2"
@@ -46,6 +50,28 @@ export function SkillItem() {
                 className="me-2 mt-2"
                 size="small"
                 label=".NET"
+            />
+            
+            
+            <br/><br/>
+            {/* Cloud */}
+            <Chip
+                avatar={<Avatar alt="azure" src="/assets/img/azure.png"/>}
+                className="me-2 mt-2"
+                size="small"
+                label="Azure"
+            />
+            <Chip
+                avatar={<Avatar alt="azure" src="/assets/img/azure-devops.png"/>}
+                className="me-2 mt-2"
+                size="small"
+                label="Azure Devops"
+            />
+            <Chip
+                avatar={<Avatar alt="azure" src="/assets/img/heroku.png"/>}
+                className="me-2 mt-2"
+                size="small"
+                label="Heroku"
             />
         </div>
     )
