@@ -1,100 +1,135 @@
 import React from "react";
-import Typist from "react-text-typist";
-import { Button } from "@material-ui/core";
-import { CardHeaderText } from "@ui/components/header-text";
+import {CardHeaderText, PageSecondaryHeader} from "@ui/components/header-text";
 import MyServiceCard from "@ui/components/my-service-card";
-import { createClient } from "@supabase/supabase-js";
-import { MyServiceModel } from "@core/model/my-services.model";
-import KnowledgeIcon from "@ui/components/knowledge-icon";
+import LandingAnimation from "@ui/components/landing-animation";
+import {createClient} from "@supabase/supabase-js";
+import {MyServiceModel} from "@core/model/my-services.model";
+
 import HomeCountUp from "@ui/components/home-count-up";
+import {SecondaryText, Text} from "@ui/components/text";
+import {Avatar, Button, Chip} from "@material-ui/core";
+import {SkillItem} from "../@ui/components/skill-item";
 
 export default function Home(props: { services: MyServiceModel[] }) {
-  const backgroundImage = {
-    backgroundImage: "url('./assets/img/background-img-02.jpg')",
-    width: "100%",
-    height: "300px",
-  };
+    const backgroundImage = {
+        backgroundImage: "url('./assets/img/background-img-02.jpg')",
+        width: "100%",
+        height: "300px",
+    };
 
-  return (
-    <div className="m-4">
-      <div className="card secondary-bg-color">
-        <div className="card-body m-5">
-          <div></div>
-          <h1>
-            <b>
-              Discover my Amazing <br /> Art Space!
-            </b>
-          </h1>
+    return (
+        <LandingAnimation title={'My Details'} description={'test'}>
 
-          <div
-            className="mt-3 d-flex"
-            style={{ fontFamily: "Roboto Mono, monospace", fontSize: "14px" }}
-          >
-            &lt;<span className="yellow">code</span>&gt;&nbsp;
-            <Typist
-              sentences={[
-                "I build web systems",
-                "I do process automation tasks",
-                "I do IT consulting",
-                "I build cross-platform applications",
-              ]}
-              deletingSpeed={80}
-              loop={true}
-            />
-            &nbsp;&lt;/<span className="yellow">code</span>&gt;
-          </div>
+            <h1>
+                <b>
+                    About me
+                </b>
+            </h1>
 
-          <Button
-            variant="contained"
-            size="large"
-            className="mt-4"
-            color="primary"
-          >
-            <small>EXPLORE NOW</small>
-          </Button>
+            <SecondaryText>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+                quasi! Veniam quaerat tenetur pariatur doloribus.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+                quasi! Veniam quaerat tenetur pariatur doloribus.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+                quasi! Veniam quaerat tenetur pariatur doloribus.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+                quasi! Veniam quaerat tenetur pariatur doloribus.
+            </SecondaryText>
 
-          <br />
-
-          <KnowledgeIcon></KnowledgeIcon>
-        </div>
-      </div>
-
-      <div className="mt-3 ms-1">
-        <div className="row">
-          <HomeCountUp></HomeCountUp>
-
-          <section className="mt-3">
-            <CardHeaderText>My Services</CardHeaderText>
-
-            <div className="row pt-2">
-              {props?.services.map((service) => (
-                <div className="col-sm-4" key={service.id}>
-                  <MyServiceCard
-                    title={service.title}
-                    description={service.description}
-                  />
+            <div className="mt-4 ms-1">
+                <div className="row">
+                    <HomeCountUp/>
                 </div>
-              ))}
             </div>
-          </section>
-        </div>
-      </div>
-    </div>
-  );
+
+            <div className="mt-5">
+                <div className="row g-5">
+                    <div className="col-sm-6 order-1">
+                        <div>
+                            <PageSecondaryHeader> Skills </PageSecondaryHeader>
+                            <div className="mt-4">
+                                <SkillItem/>
+                            </div>
+                        </div>
+
+                        <div className='mt-4'>
+                            <PageSecondaryHeader> Education</PageSecondaryHeader>
+                            <div className="mt-4">
+                                <div>
+                                    <CardHeaderText> BSc (Hons) in Information Technology - 3.1 GPA</CardHeaderText>
+                                    <div className="ms-3">
+                                        <SecondaryText> <i>- Specialising in Information Technology</i> </SecondaryText>
+                                        <SecondaryText> <i>- 2018-2021</i> </SecondaryText>
+                                    </div>
+                                </div>
+
+                                <div className='mt-3'>
+                                    <CardHeaderText> G.C.E (A/L) Examinations </CardHeaderText>
+                                    <div className="ms-3">
+                                        <SecondaryText> <i>- Technology Stream </i> </SecondaryText>
+                                        <SecondaryText> <i>- 2014-2017</i> </SecondaryText>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='mt-4'>
+                            <PageSecondaryHeader> Work Experience </PageSecondaryHeader>
+                            <div className="mt-4">
+                                <div>
+                                    <CardHeaderText> BSc (Hons) in Information Technology - 3.1 GPA</CardHeaderText>
+                                    <div className="ms-3">
+                                        <SecondaryText> <i>- Specialising in Information Technology</i> </SecondaryText>
+                                        <SecondaryText> <i>- 2018-2021</i> </SecondaryText>
+                                    </div>
+                                </div>
+
+                                <div className='mt-3'>
+                                    <CardHeaderText> G.C.E (A/L) Examinations </CardHeaderText>
+                                    <div className="ms-3">
+                                        <SecondaryText> <i>- Technology Stream </i> </SecondaryText>
+                                        <SecondaryText> <i>- 2014-2017</i> </SecondaryText>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-sm-6 order-0">
+                        <PageSecondaryHeader>My Services</PageSecondaryHeader>
+
+                        <div className="row pt-2">
+                            {props?.services.map((service) => (
+                                <div className="col-sm-12" key={service.id}>
+                                    <MyServiceCard
+                                        title={service.title}
+                                        description={service.description}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </LandingAnimation>
+    );
 }
 
 export async function getServerSideProps(context: any) {
-  const supabaseUrl = "https://euuxswablrvfihzxbfml.supabase.co";
-  const supabaseKey = process.env.SUPABASE_KEY ?? "";
-  const supabase = createClient(supabaseUrl, supabaseKey);
+    const supabaseUrl = "https://euuxswablrvfihzxbfml.supabase.co";
+    const supabaseKey = process.env.SUPABASE_KEY ?? "";
+    const supabase = createClient(supabaseUrl, supabaseKey);
 
-  const response = await supabase.from("my_services").select("*");
+    const response = await supabase.from("my_services").select("*");
 
-  return {
-    props: {
-      services: response.data,
-    },
-  };
+    return {
+        props: {
+            services: response.data,
+        },
+    };
 }
 
 

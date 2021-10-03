@@ -1,18 +1,18 @@
 export const PathNames = [
     {
-      path: 'home',
-      label: 'Home',
+        path: 'home',
+        label: 'Home',
     },
     {
-      path: 'projects',
-      label: 'Projects',
+        path: 'projects',
+        label: 'Projects',
     },
     {
-      path: 'pricing',
-      label: 'Pricing',
+        path: 'pricing',
+        label: 'Pricing',
     },
     {
-      path: 'testimonial',
-      label: 'Testimonial',
+        path: 'testimonial',
+        label: 'Testimonial',
     },
-  ];
+];
