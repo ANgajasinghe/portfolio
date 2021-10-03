@@ -5,6 +5,7 @@ import React from "react";
 import CheckIconContent from "@ui/components/check-icon-content";
 import {Avatar, Chip} from "@material-ui/core";
 import Typist from "react-text-typist";
+import { SkillItem } from "@ui/components/skill-item";
 
 export default function PersonalDetails() {
     return (
@@ -18,7 +19,8 @@ export default function PersonalDetails() {
                     <CardHeaderText> AG. Nayanajith </CardHeaderText>
                     <div className="mt-2">
 
-                        <Typist
+                        <div className="secondary-text"> Full-stack Web Developer </div>
+                        {/* <Typist
                             sentences={[
                                 "Full-stack Web Developer",
                                 "Mobile Developer",
@@ -28,7 +30,7 @@ export default function PersonalDetails() {
                             deletingSpeed={80}
                             className="secondary-text"
                             loop={true}
-                        />
+                        /> */}
                     </div>
                 </div>
             </div>
@@ -58,7 +60,7 @@ export default function PersonalDetails() {
 
                     <CardHeaderText> Coding </CardHeaderText>
 
-                    <Chip
+                    {/* <Chip
                         avatar={<Avatar alt=".net" src="/assets/img/net-logo.png"/>}
                         className="me-2 mt-2"
                         color="primary"
@@ -112,7 +114,10 @@ export default function PersonalDetails() {
                         color="primary"
                         variant="outlined"
                         label="Angular"
-                    />
+                    /> */}
+
+
+                    <SkillItem/>
 
                     {/* <ProgressBar name=".NET" value={90} /> */}
 
