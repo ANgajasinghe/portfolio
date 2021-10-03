@@ -6,7 +6,7 @@ export default function MainHeader() {
 
     return (
         <div
-            className="card vh-100 border-0 d-flex justify-content-center body-bg"
+            className="card vh-100 border-0 d-flex justify-content-center  primary-bg-color"
             style={{width: "100px"}}
         >
             <div className="position-absolute p-1  w-100 top-0 text-center mb-3">
@@ -16,7 +16,7 @@ export default function MainHeader() {
 
             </div>
 
-            <div className="card border-0 body-bg">
+            <div className="card border-0 shadow-lg body-bg">
 
                 <div className="card-body">
                     <SideMenu/>
